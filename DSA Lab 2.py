@@ -1,4 +1,4 @@
-#balanced
+#balanced parenthesis in an equation check.
 from collections import deque
 class balanced:
     stack=[]
