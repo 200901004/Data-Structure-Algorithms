@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
-#balanced parenthesis in an equation check
+#balanced
 from collections import deque
 class balanced:
     stack=[]
@@ -22,16 +16,16 @@ class balanced:
             else:
                 if not self.stack: 
                     return False 
-                peek=self.pop()
-                if peek=="(":
-                    if paren==")":
-                        return True
-                if peek=="{":
-                    if paren=="}":
-                        return True
-                if peek=="[":
-                    if paren=="]":
-                        return True
+                parenthesis=self.pop()
+                if parenthesis=="(":
+                    if paren!=")":
+                        return False
+                if parenthesis=="{":
+                    if paren!="}":
+                        return False
+                if parenthesis=="[":
+                    if paren!="]":
+                        return False
         if self.stack:
             return False
         return True
@@ -40,5 +34,5 @@ paren=input("Enter the equation: ")
 if b.check_balanced(paren):
         print(paren,"- Balanced")
 else:
-        print(paren,"- Unbalanced")  
-
+        print(paren,"- Unbalanced")       
+        
